@@ -49,9 +49,33 @@ namespace Webbshop.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult> Checkout(CheckoutViewModel.Model)
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> Checkout(CheckoutViewModel model)
         {
-            
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+
+            var cart = new ShoppingCart(HttpContext);
+            await cart.CheckoutAsync(model);
+
+            var result = await cart.CheckoutAsync(model);
+
+            if (result.Succeeded)
+            {
+                TempData["transactionId"] = result.TransactionId;
+                return RedirectToAction("Complete");
+            }
+
+            ModelState.AddModelError(string.Empty, result.Message);
+            return View(model);
+        }
+
+        public ActionResult Complete()
+        {
+            ViewBag.TransactionId = (string) TempData["transactionId"];
+            return View();
         }
 
         private static decimal CalculateCart(IEnumerable<CartItem> items)

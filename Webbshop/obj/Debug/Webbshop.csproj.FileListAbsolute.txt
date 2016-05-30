@@ -53,3 +53,7 @@ F:\Programmering\MVC\Webbshop\Webbshop\Webbshop\obj\Debug\Webbshop.csproj.Genera
 F:\Programmering\MVC\Webbshop\Webbshop\Webbshop\obj\Debug\Webbshop.Migrations.UpdateProduct.resources
 F:\Programmering\MVC\Webbshop\Webbshop\Webbshop\obj\Debug\Webbshop.Migrations.AddCartItem.resources
 F:\Programmering\MVC\Webbshop\Webbshop\Webbshop\obj\Debug\Webbshop.Migrations.AddOrderInfo.resources
+F:\Programmering\MVC\Webbshop\Webbshop\Webbshop\obj\Debug\Webbshop.Migrations.AddOrderInfo2.resources
+F:\Programmering\MVC\Webbshop\Webbshop\Webbshop\obj\Debug\Webbshop.Migrations.AddOrderInfo3.resources
+F:\Programmering\MVC\Webbshop\Webbshop\Webbshop\obj\Debug\Webbshop.Migrations.AddOrderInfo4.resources
+F:\Programmering\MVC\Webbshop\Webbshop\Webbshop\bin\Braintree-2.60.0.dll

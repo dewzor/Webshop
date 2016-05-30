@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Web;
 using Webbshop.Data;
 using Webbshop.Models;
+using Webbshop.ViewModels;
 
 namespace Webbshop.Services
 {
@@ -20,10 +21,10 @@ namespace Webbshop.Services
         {
             
         }
-        public ShoppingCart(HttpContextBase httpcontext, StoreContext storeContext)
+        public ShoppingCart(HttpContextBase httpContext, StoreContext storeContext)
         {
             _db = storeContext;
-            _cartId = GetCartId(httpcontext);
+            _cartId = GetCartId(httpContext);
         }
 
         public async Task AddAsync(int productId)
@@ -92,7 +93,59 @@ namespace Webbshop.Services
                 .Where(c => c.CartId == _cartId).ToArrayAsync();
         }
 
-        private string GetCartId(HttpContextBase http)
+        public async Task<PaymentResult> CheckoutAsync(CheckoutViewModel model)
+        {
+            var items = await GetCartItemsAsync();
+            var order = new Order()
+            {
+                FirstName = model.FirstName,
+                LastName = model.LastName,
+                City = model.City,
+                State = model.State,
+                PostalCode = model.PostalCode,
+                Country = model.Country,
+                Phone = model.Phone,
+                Email = model.Email,
+                OrderDate = DateTime.Now
+            };
+
+            foreach (var item in items)
+            {
+                var detail = new OrderDetail()
+                {
+                    ProductId = item.ProductId,
+                    UnitPrice = item.Product.Price,
+                    Quantity = item.Count
+                };
+
+                order.Total += (item.Product.Price*item.Count);
+
+                order.OrderDetails.Add(detail);
+            }
+
+            model.Total = order.Total;
+
+            var gateway = new BtreeGateway();
+            var result = gateway.ProcessPayment(model);
+
+            if (result.Succeeded)
+            {
+                order.TransactionId = result.TransactionId;
+                _db.Orders.Add(order);
+                _db.CartItems.RemoveRange(items);
+                await _db.SaveChangesAsync();
+            }
+
+            //TODO Assign transaction id
+
+
+            //Följande görs bara om ordern authorizas
+            
+            return result;
+
+        }
+
+    private string GetCartId(HttpContextBase http)
         {
             var cookie = http.Request.Cookies.Get("ShoppingCart");
             var cartId = string.Empty;

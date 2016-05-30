@@ -26,6 +26,10 @@ namespace Webbshop.Models
         public string LastName { get; set; }
 
         [Required]
+        [StringLength(70, MinimumLength = 3)]
+        public string Address { get; set; }
+
+        [Required]
         [StringLength(40)]
         public string City { get; set; }
 
@@ -40,6 +44,11 @@ namespace Webbshop.Models
         [Required]
         [StringLength(40)]
         public string Country { get; set; }
+
+        [Required]
+        [StringLength(24)]
+        [DataType(DataType.PhoneNumber)]
+        public string Phone { get; set; }
 
         [Required]
         public string Email { get; set; }
