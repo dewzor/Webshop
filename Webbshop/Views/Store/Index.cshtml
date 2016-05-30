@@ -1,0 +1,15 @@
+﻿@model IEnumerable<Webbshop.Models.Category>
+    
+@{
+    ViewBag.Title = "Index";
+
+}
+
+<h3> Browse categories</h3>
+
+<ul class="list group">
+    @foreach (var category in Model)
+    {
+        <li class="list-grup-item"> @Html.ActionLink(category.Name, "Browse", new { id=category.Name} )</li>
+    }
+</ul>

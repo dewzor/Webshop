@@ -1,0 +1,67 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using System.Web;
+using System.Web.Mvc;
+using Webbshop.Models;
+using Webbshop.Services;
+using Webbshop.ViewModels;
+
+namespace Webbshop.Controllers
+{
+    public class ShoppingCartController : Controller
+    {
+        // GET: ShoppingCart
+        public async Task<ActionResult> Index()
+        {
+            var cart = new ShoppingCart(HttpContext);
+            var items = await cart.GetCartItemsAsync();
+
+            return View(new ShoppingCartViewModel
+            {
+                Items = items,
+                Total = CalculateCart(items)
+            });
+        }
+
+        public async Task<ActionResult> AddToCart(int id)
+        {
+            var cart = new ShoppingCart(HttpContext);
+
+            await cart.AddAsync(id);
+
+            return RedirectToAction("Index");
+        }
+
+        public async Task<ActionResult> RemoveFromCart(int id)
+        {
+            var cart = new ShoppingCart(HttpContext);
+
+            await cart.RemoveAsync(id);
+
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult Checkout()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> Checkout(CheckoutViewModel.Model)
+        {
+            
+        }
+
+        private static decimal CalculateCart(IEnumerable<CartItem> items)
+        {
+            var total = 0m;
+            foreach (var item in items)
+            {
+                total += (item.Product.Price*item.Count);
+            }
+            return total;
+        }
+    }
+}
