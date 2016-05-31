@@ -5,11 +5,63 @@
 
 }
 
-<h3> Browse categories</h3>
 
-<ul class="list group">
-    @foreach (var category in Model)
-    {
-        <li class="list-grup-item"> @Html.ActionLink(category.Name, "Browse", new { id=category.Name} )</li>
-    }
-</ul>
+
+<navbar class="navbar navbar-inverse">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#"><img class="logo" src="~/Images/logo.png" width="200px" /></a>
+        </div>
+        <div>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Categories</a></li>
+                <li><a href="#">Policy</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</navbar>
+
+<div class="splitter"></div>
+
+<div class="jumbotron">
+
+    <h1>Built using Swedish technology</h1>
+    <p>Guaranteed success</p>
+
+</div>
+
+@*PLACEHOLDER Denna ska senare läsa in från db*@
+<div class="container new-products col-md-6">
+    <div class="page-header">
+        <h1>New products</h1>
+        <img src="~/Images/products/shoes1.jpg" class="img-thumbnail" />
+        <img src="~/Images/products/shoes2.jpg" class="img-thumbnail" />
+        <img src="~/Images/products/shoes3.jpg" class="img-thumbnail" />
+        <img src="~/Images/products/watch1.gif" class="img-thumbnail" />
+        <img src="~/Images/products/watch.jpg" class="img-thumbnail" />
+        <img src="~/Images/products/shirt1.jpg" class="img-thumbnail" />
+    </div>
+</div>
+
+<div class="container new-products col-md-6">
+    <div class="page-header">
+        <h2>Popular Products</h2>
+        <img src="~/Images/products/shoes1.jpg" class="img-thumbnail" />
+        <img src="~/Images/products/shoes2.jpg" class="img-thumbnail" />
+        <img src="~/Images/products/shoes3.jpg" class="img-thumbnail" />
+        <img src="~/Images/products/watch1.gif" class="img-thumbnail" />
+        <img src="~/Images/products/watch.jpg" class="img-thumbnail" />
+        <img src="~/Images/products/shirt1.jpg" class="img-thumbnail" />
+    </div>
+</div>
+
+    @*originalkoden*@
+
+    <ul class="list group">
+        @foreach (var category in Model)
+        {
+        <li class="list-grup-item"> @Html.ActionLink(category.Name, "Browse", new { id = category.Name })</li>
+        }
+    </ul>

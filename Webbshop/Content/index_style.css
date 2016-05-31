@@ -1,0 +1,59 @@
+﻿body {
+
+}
+
+navbar{
+    margin-top: 200px;
+    padding-top: 200px;
+}
+
+.nav-header .navbar-brand#logo {
+    margin-top: 30px;
+}
+
+.navbar-nav li a {
+ line-height: 50px;
+}
+
+.navbar {
+    -webkit-box-shadow: 0 8px 6px -6px #999;
+    -moz-box-shadow: 0 8px 6px -6px #999;
+    box-shadow: 0 8px 6px -6px #999;
+}
+
+
+.splitter{
+    height:20px;
+    background-color: #2D2D2D;
+}
+
+
+.previews{
+    margin-top: 100px;
+}
+.previews div{
+    height: 200px;
+    width: 200px;
+    position: relative;
+    margin-right20opx;
+}
+
+
+.navbar .brand, .navbar .nav > li > a:hover {
+    color:#2D2D2D;
+}
+
+.jumbotron{
+    height: 200px;
+    background: url('/Images/bgg.jpg') center center no-repeat;
+    text-align: center;
+}
+
+.jumbotron h1{
+    font-size: 40px;
+    color:#77f970;
+}
+
+.jumbotron p{
+    color:#fff;
+}
