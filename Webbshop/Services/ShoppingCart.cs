@@ -100,6 +100,7 @@ namespace Webbshop.Services
             {
                 FirstName = model.FirstName,
                 LastName = model.LastName,
+                Address = model.Address,
                 City = model.City,
                 State = model.State,
                 PostalCode = model.PostalCode,

@@ -58,7 +58,6 @@ namespace Webbshop.Controllers
             }
 
             var cart = new ShoppingCart(HttpContext);
-            await cart.CheckoutAsync(model);
 
             var result = await cart.CheckoutAsync(model);
 
