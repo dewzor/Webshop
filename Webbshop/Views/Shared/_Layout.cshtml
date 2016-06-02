@@ -14,6 +14,11 @@
 
     <link href="@Url.Content("~/Content/thumbnail-gallery.css")"
           rel="stylesheet" type="text/css" />
+
+    <link href="~/Content/hover.css" rel="stylesheet" type="text/css"/>
+
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -35,10 +40,46 @@
         </div>
     </div>*@
 
+
+    <navbar class="navbar navbar-inverse">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#"><img class="logo" src="~/Images/logo.png" width="200px" /></a>
+            </div>
+            <div>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Categories</a></li>
+                    <li><a href="#">Policy</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </navbar>
+
     <div class"="container body-content">
         @RenderBody()
         <hr />
-        <footer class="navbar navbar-fixed-bottom navbar-default text-center"></footer>
+        <footer id ="footer" class="navbar navbar-default text-center">
+
+            <div id="left-footer" class="col-md-12">
+                <ul>
+                    <li id="adress"><span class="glyphicon glyphicon-map-marker"></span> Nordgatan 11</li>
+                    <li id="phone"><span class="glyphicon glyphicon-phone"></span> +83 070-5325232</li>
+                    <li id="mail"><span class="glyphicon glyphicon-envelope"></span> traders@support.se</li>
+                </ul>
+            </div>
+
+            <div id="right-footer" class="col-md-12">
+                <ul>
+                    <li><img class="hvr-float-shadow" src="~/Images/facebook.png" /></li>
+                    <li><img class="hvr-float-shadow" src="~/Images/social-google-plus-square-button.png" /></li>
+                    <li><img class="hvr-float-shadow" src="~/Images/twitter-logo-on-black-background.png" /></li>
+                </ul>
+            </div>
+
+
+        </footer>
     </div>
     <script src="~Scripts/bootstrap.js"></script>
     @RenderSection("scripts", required: false)

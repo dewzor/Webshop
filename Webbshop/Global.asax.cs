@@ -16,6 +16,7 @@ namespace Webbshop
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             //Database.SetInitializer<StoreContext>(null);
+
         }
     }
 }
