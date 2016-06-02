@@ -136,9 +136,14 @@
     <Content Include="Content\hover.css" />
     <Content Include="Content\index_style.css" />
     <Content Include="Content\thumbnail-gallery.css" />
-    <Content Include="Images\bgg.jpg" />
+    <Content Include="Images\bgg.png" />
+    <Content Include="Images\desk1.jpg" />
+    <Content Include="Images\desk2.jpg" />
+    <Content Include="Images\desk3.jpg" />
     <Content Include="Images\facebook.png" />
+    <Content Include="Images\iphone-5-schematics.jpg" />
     <Content Include="Images\jumbotron.png" />
+    <Content Include="Images\mountain.png" />
     <Content Include="Images\products\shirt1.jpg" />
     <Content Include="Images\products\shoes1.jpg" />
     <Content Include="Images\products\shoes2.jpg" />
@@ -150,7 +155,6 @@
     <Content Include="Images\winter.jpg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Images\above.jpg" />
     <Content Include="Images\leaves.jpg" />
     <Content Include="Images\logo.png" />
     <Content Include="scripts\ai.0.15.0-build58334.js" />

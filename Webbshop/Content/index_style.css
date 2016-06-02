@@ -1,5 +1,9 @@
 ﻿body {
+    font-family: 'Roboto Condensed', sans-serif;
+}
 
+*{
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
 navbar{
@@ -46,7 +50,6 @@ navbar{
     height: 200px;
     width: 200px;
     position: relative;
-    margin-right20opx;
 }
 
 
@@ -56,13 +59,15 @@ navbar{
 
 .jumbotron{
     height: 200px;
-    background: url('/Images/bgg.jpg') center center no-repeat;
+    background: url('/Images/bgg.png') center center no-repeat;
     text-align: center;
+    margin-bottom: 0;
 }
 
 .jumbotron h1{
     font-size: 40px;
-    color:#77f970;
+    color:#ff7b00;
+    margin-top:10px;
 }
 
 .jumbotron p{
@@ -72,10 +77,11 @@ navbar{
 #adress{
     font-weight: bold;
     font-size: 17px;
+    color:#ff7b00 ;
 }
 
 #adress span{
-    color: red;
+    color: #fff;
 }
 
 #phone{
@@ -83,7 +89,7 @@ navbar{
 }
 
 #phone span{
-    color: #7aabff;
+    color: #fff;
 }
 
 #mail{
@@ -91,12 +97,13 @@ navbar{
 }
 
 #mail span{
-    color: #ffefa0;
+    color: #fff;
 }
 
 #left-footer ul li{
-    margin-top: 5px;
+    margin-top: 10px;
      display: block;
+
 }
 
 #right-footer ul li{
@@ -109,3 +116,57 @@ navbar{
     height: 30px;
     margin-bottom: 20px;
 }
+
+span{
+    margin-right: 5px;
+}
+
+h2{
+    font-size: 40px;
+    font-weight: bolder;
+    text-align: center;
+    margin-top:10%;
+    margin-bottom: 5%;
+}
+
+
+h3{
+    text-align: center;
+}
+
+
+hr.fancy-line { 
+    border: 0; 
+    height: 1px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+
+}
+hr.fancy-line:before {
+    top: -0.5em;
+    height: 1em;
+}
+hr.fancy-line:after {
+    content:'';
+    height: 0.5em;
+    top: 1px;
+}
+
+hr.fancy-line:before, hr.fancy-line:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+}
+
+hr.fancy-line, hr.fancy-line:before {
+    background: radial-gradient(ellipse at center, rgba(0,0,0,0.1) 0%,rgba(0,0,0,0) 75%);
+}
+
+body, hr.fancy-line:after {
+    background: #f4f4f4;
+}
+
+#products img{
+    height: 210px;
+}
+
