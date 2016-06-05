@@ -14,7 +14,7 @@ namespace Webbshop.Controllers
         public async Task<ActionResult> Index()
         {
             //await DbPopulate.AddDataAsync();
-            return View();
+            return Redirect("Store/Index");
         }
     }
 }

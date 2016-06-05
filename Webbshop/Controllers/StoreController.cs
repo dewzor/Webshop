@@ -44,6 +44,12 @@ namespace Webbshop.Controllers
             return View(product);
         }
 
+        public async Task<ActionResult> Categories()
+        {
+            var categories = await _store.GetCategoriesAsync();
+            return View(categories);
+        }
+
 
     }
 }
