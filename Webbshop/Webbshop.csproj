@@ -219,6 +219,10 @@
     <Compile Include="Migrations\201605301746279_AddOrderInfo4.Designer.cs">
       <DependentUpon>201605301746279_AddOrderInfo4.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201606051239202_ProductDescription.cs" />
+    <Compile Include="Migrations\201606051239202_ProductDescription.Designer.cs">
+      <DependentUpon>201606051239202_ProductDescription.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\CartItem.cs" />
     <Compile Include="Models\Category.cs" />
@@ -278,6 +282,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201605301746279_AddOrderInfo4.resx">
       <DependentUpon>201605301746279_AddOrderInfo4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606051239202_ProductDescription.resx">
+      <DependentUpon>201606051239202_ProductDescription.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
