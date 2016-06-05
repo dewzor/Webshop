@@ -67,7 +67,7 @@ navbar{
 .jumbotron h1{
     font-size: 40px;
     color:#ff7b00;
-    margin-top:10px;
+    margin-top:5px;
 }
 
 .jumbotron p{
@@ -132,6 +132,7 @@ h2{
 
 h3{
     text-align: center;
+    margin-top: 0px;
 }
 
 
@@ -167,6 +168,19 @@ body, hr.fancy-line:after {
 }
 
 #products img{
-    height: 210px;
+    width: 260px;
+    height: 200px;
+    padding: 5px 5px;
 }
 
+.feautured btn{
+    float: right;
+}
+
+
+.btn-danger {
+    border-color: #b2470e;
+    background-color: #DD5E16;
+}
+
+.btn-danger:hover { border-color: #DD5E16; background-color: #b2470e; }
